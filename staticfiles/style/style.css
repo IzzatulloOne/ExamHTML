@@ -1,0 +1,21 @@
+.form-control {
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-control-file {
+    margin-top: 10px;
+}
+
+.btn-outline-secondary {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Detail</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-primary">{{ company.company_name }}</h1>
+        {% if company.company_image %}
+            <img src="{{ company.company_image.url }}" alt="{{ company.company_name }}" class="img-fluid mb-3">
+        {% endif %}
+        <p><strong>Phone:</strong> {{ company.copmany_phone }}</p>
+        <p><strong>Accepts Workers:</strong> {{ company.accepts_workers }}</p>
+        <p><strong>Year Built:</strong> {{ company.company_builded_at }}</p>
+        <p><strong>History:</strong> {{ company.the_company_exists }}</p>
+        <p><strong>CEO:</strong> {{ company.CEO_of_the_company }}</p>
+        <p><strong>Employees:</strong> {{ company.how_many_employees }}</p>
+        <a href="{% url 'edit_company' company.pk %}" class="btn btn-primary">Edit</a>
+        <a href="{% url 'delete_company' company.pk %}" class="btn btn-danger">Delete</a>
+        <a href="{% url 'home' %}" class="btn btn-outline-secondary">Back to home</a>
+    </div>
+</body>
+</html>

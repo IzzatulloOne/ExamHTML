@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Service</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body class="bg-light">
+    <div class="container my-5">
+        <div class="card shadow-lg">
+            <div class="card-header bg-primary text-white text-center">
+                <h1>Edit Service</h1>
+            </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <!-- Форма стилизована через Bootstrap -->
+                    <div class="mb-3">
+                        {{ form.as_p }}
+                    </div>
+                    
+                    <!-- Красивая кнопка загрузки файла -->
+                    <div class="mb-3">
+                        <label class="form-label">Upload File</label>
+                        <input class="form-control" type="file">
+                    </div>
+                    
+                    <!-- Кнопка для сохранения изменений -->
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success btn-lg px-5">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXlYQo29Kf3Bx0tZWb5KE56d2vv8a6r/Jqa/Mz1I6J/xR+RxpD63GQ9SjgE/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGtml6u4pIn4I6fMW3oKqABzWj3fWkLZn1i6DNV3XrX04BfRx0G9CZSMNX4" crossorigin="anonymous"></script>
+</body>
+</html>

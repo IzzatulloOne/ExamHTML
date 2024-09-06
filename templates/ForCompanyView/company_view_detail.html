@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company View Detail</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-primary">{{ company_view.about_company }}</h1>
+        <p><strong>Details:</strong> {{ company_view.detail_of_company }}</p>
+        {% if company_view.company_image %}
+            <img src="{{ company_view.company_image.company_image.url }}" alt="{{ company_view.company }}" class="img-fluid mb-3">
+        {% endif %}
+        <p><strong>Company:</strong> {{ company_view.company.company_name }}</p>
+        <p><strong>Build Date:</strong> {{ company_view.company_builded_at.company_builded_at }}</p>
+        <p><strong>Accepts Workers:</strong> {{ company_view.accepts_workers.accepts_workers }}</p>
+        <a href="{% url 'edit_company_view' company_view.pk %}" class="btn btn-primary">Edit</a>
+        <a href="{% url 'delete_company_view' company_view.pk %}" class="btn btn-danger">Delete</a>
+        <a href="{% url 'home' %}" class="btn btn-outline-secondary">Back to home</a>
+    </div>
+</body>
+</html>
